@@ -13,7 +13,7 @@ public class Operadores {
 		//and && or || not !
 		
 		
-		String usuario = "root";
+		String usuario = "root1";
 		String contrasenia = "root";
 				//asi se pregunta por un string en java
 		if("root".equals(usuario) && "root".equals(contrasenia)){
