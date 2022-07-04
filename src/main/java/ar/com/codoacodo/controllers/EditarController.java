@@ -17,12 +17,14 @@ import javax.servlet.http.HttpServletResponse;
 import ar.com.codoacodo.connection.AdministradorDeConexiones;
 import ar.com.codoacodo.dto.Producto;
 
-@WebServlet("/api/ListadoController")
-public class ListadoController extends HttpServlet {
+@WebServlet("/api/EditarController")
+public class EditarController extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		String sql = "SELECT * FROM PRODUCTO";
+		String id = req.getParameter("id");
+		
+		String sql = "SELECT * FROM PRODUCTO WHERE ID="+id;
 		
 		//conexion OK
 		Connection con = AdministradorDeConexiones.getConnection();
@@ -34,9 +36,9 @@ public class ListadoController extends HttpServlet {
 			//resultset
 			ResultSet rs = st.executeQuery(sql);
 			
-			List<Producto> listado = new ArrayList<>();
+			Producto prodFromDb = null;
 			
-			while(rs.next()) {//¿mientras tenga datos?
+			if(rs.next()) {//¿mientras tenga datos?
 				// rs > sacando los datos
 				Long idProducto = rs.getLong(1);//tomar la primer columna
 				String nombre = rs.getString(2);
@@ -46,21 +48,46 @@ public class ListadoController extends HttpServlet {
 				String codigo = rs.getString(6);
 				
 				//campos crear un objeto????
-				Producto prodFromDb = new Producto(idProducto,nombre,precio,fecha,imagen,codigo);
-				
-				//cargo el producto en listado
-				listado.add(prodFromDb);
+				prodFromDb = new Producto(idProducto,nombre,precio,fecha,imagen,codigo);
 			}
 			
 			//ir a otra pagina y ademas pasarle datos				
-			req.setAttribute("listado", listado);
+			req.setAttribute("producto", prodFromDb);
 			
-			getServletContext().getRequestDispatcher("/listado.jsp").forward(req, resp);
+			getServletContext().getRequestDispatcher("/editar.jsp").forward(req, resp);
 			
 			//cierre de conexion
 			con.close();
 		}catch (Exception e) {
 			e.printStackTrace();
+		}
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+		String nombre = req.getParameter("nombre");//titulo1
+		String precio = req.getParameter("precio");//1500
+		String imagen = req.getParameter("imagen");
+		String codigo = req.getParameter("codigo");//0001
+		
+		Connection con = AdministradorDeConexiones.getConnection();
+		if(con != null) { 
+			String sql = "UPDATE PRODUCTO "
+					+ " set nombre='"+nombre+"',"
+					+ " precio='"+precio+"'"
+					+ " WHERE codigo = '"+codigo+"'"; 			
+		
+			try {
+				Statement st = con.createStatement();			
+				st.executeUpdate(sql);
+				
+				con.close();
+				
+				resp.sendRedirect(req.getContextPath()+"/api/ListadoController");
+			}catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}
 }
