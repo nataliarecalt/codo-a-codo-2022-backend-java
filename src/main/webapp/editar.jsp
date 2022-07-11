@@ -4,7 +4,7 @@
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	</head>
 	
-	<body>
+	<body style="background-color:#000000">
 		<main>
 			<!-- ACA VA EL NAVBAR  -->
 			<%@include file="navbar.jsp" %>
@@ -13,7 +13,7 @@
 					<% 
 					  	Producto producto = (Producto)request.getAttribute("producto");
 				  	%>
-					<h1>Editar producto ID=<%=producto.getIdProducto()%></h1>
+					<h1> <br> Editar producto - ID=<%=producto.getIdProducto()%></h1>
 					<!--  JSP -->
 					<form method="POST"
 						action="<%=request.getContextPath()%>/api/EditarController">
@@ -40,8 +40,8 @@
 						  	value="<%=producto.getCodigo()%>" 
 						  	type="text" class="form-control" id="exampleFormControlTextarea1" maxlength="7">
 						</div>
-						<button class="btn btn-primary">
-							Finalizar Edición
+						<button class="btn btn-outline-light">
+							Finalizar EdiciÃ³n
 						</button>
 					</form>
 				</section>
