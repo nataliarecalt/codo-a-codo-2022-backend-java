@@ -5,14 +5,14 @@
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	</head>
 	
-	<body>
+	<body style="background-color:#000000">
 		<main>
 			<!-- ACA VA EL NAVBAR  -->
 			<%@include file="navbar.jsp" %>
 			<div class="container">
 				<section>
-					<h1>Listado</h1>
-					<table class="table">
+					<h1 style="color: white" align="center"> <br> Listado de productos <br></h1>
+					<table class="table" style="color: white">
 					  <thead>
 					    <tr>
 					      <th scope="col">ID</th>
@@ -39,8 +39,8 @@
 					      <td><%=unProducto.getPrecio() %></td>
 					      <td><%=unProducto.getCodigo() %></td>
 					      <td>
-					      	<a class="btn btn-danger" href="<%=request.getContextPath()%>/api/EliminarController?id=<%=unProducto.getIdProducto()%>" role="button">Eliminar</a> | 
-					      	<a class="btn btn-secondary" href="<%=request.getContextPath()%>/api/EditarController?id=<%=unProducto.getIdProducto()%>" role="button">Editar</a>
+					      	<a class="btn btn-outline-danger" href="<%=request.getContextPath()%>/api/EliminarController?id=<%=unProducto.getIdProducto()%>" role="button">Eliminar</a> | 
+					      	<a class="btn btn-outline-success" href="<%=request.getContextPath()%>/api/EditarController?id=<%=unProducto.getIdProducto()%>" role="button">Editar</a>
 					      </td>
 					    </tr>
 					   <%
