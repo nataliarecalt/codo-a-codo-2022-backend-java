@@ -11,7 +11,7 @@
 			<%@include file="navbar.jsp" %>
 			<div class="container">
 				<section>
-					<h1 style="color: white" align="center"> <br> Listado de productos <br></h1>
+					<h1 style="color: white" align="center"> <br> Listado de productos <br> </h1>
 					<table class="table" style="color: white">
 					  <thead>
 					    <tr>
