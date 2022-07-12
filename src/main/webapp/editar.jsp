@@ -13,27 +13,27 @@
 					<% 
 					  	Producto producto = (Producto)request.getAttribute("producto");
 				  	%>
-					<h1> <br> Editar producto - ID=<%=producto.getIdProducto()%></h1>
+					<h1 style="color: white"> <br> Editar producto - ID:<%=producto.getIdProducto()%></h1>
 					<!--  JSP -->
 					<form method="POST"
 						action="<%=request.getContextPath()%>/api/EditarController">
-						<div class="mb-3">
+						<div class="mb-3" style="color: white">
 						  <label for="exampleFormControlInput1" class="form-label">Nombre</label>
 						  <input name="nombre"
 						  	value="<%=producto.getNombre()%>"  
 						  	type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre" maxlength="50">
 						</div>
-						<div class="mb-3">
+						<div class="mb-3" style="color: white">
 						  <label for="exampleFormControlTextarea1" class="form-label">Precio</label>
 						  <input name="precio"
 						  	value="<%=producto.getPrecio()%>" 
 						  	type="number" class="form-control" id="exampleFormControlTextarea1">
 						</div>
-						<div class="mb-3">
+						<div class="mb-3" style="color: white">
 						  <label for="exampleFormControlTextarea1" class="form-label">Im&aacute;gen</label>
 						  <input name="imagen" type="file" class="form-control" id="exampleFormControlTextarea1">
 						</div>
-						<div class="mb-3">
+						<div class="mb-3" style="color: white">
 						  <label for="exampleFormControlTextarea1" class="form-label">C&oacute;digo</label>
 						  <input name="codigo"
 						  	readonly="readonly"
@@ -41,7 +41,7 @@
 						  	type="text" class="form-control" id="exampleFormControlTextarea1" maxlength="7">
 						</div>
 						<button class="btn btn-outline-light">
-							Finalizar Edición
+							Finalizar Edici&oacute;n
 						</button>
 					</form>
 				</section>
