@@ -12,6 +12,7 @@
 			<div class="container">
 				<section>
 					<h1 style="color: white" align="center"> <br> Listado de productos <br> </h1>
+					<br>
 					<table class="table" style="color: white">
 					  <thead>
 					    <tr>
