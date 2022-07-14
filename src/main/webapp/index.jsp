@@ -12,8 +12,8 @@
 						<h2 style="color: white" align="center"><br>ABM Productos<br></h2>
 				</section>
 				<div align="center" >
-					<p style="color: DCDCDC" ><br>Sistema de Inventario creado para la empresa Codo a Codo <br> con la finalidad de acceder a b&uacutesquedas, edici&oacuten y eliminaci&oacuten de productos.</p>
- 					<h3 style="color:#12C176" align="center"><br>¿C&oacutemo funciona el ABM?</h3>
+					<p style="color: DCDCDC" ><br>Sistema de Inventario creado para la empresa Codo a Codo <br> con la finalidad de acceder a b&uacutesquedas, edici&oacuten y eliminaci&oacuten de productos.<br></p>
+ 					<h3 style="color:#12C176" align="center">¿C&oacutemo funciona el ABM?</h3>
  					<p style="color: #DCDCDC" ><br>En nuestra barra de navegaci&oacuten podr&aacute acceder al menu "Alta", en el que deber&aacute registrar el ingreso de un producto y <br> tambi&eacuten al "Listado" de los mismos, a trav&eacutes del cual podr&aacute modificar la informaci&oacuten o eliminar un art&iacuteculo de la lista.</p>
 				</div>
 			</div>
