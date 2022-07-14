@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="<%=request.getContextPath()%>">Codo a Codo</a>
+    <a class="navbar-brand" style="color:#12C176" href="<%=request.getContextPath()%>">Codo a Codo</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -20,7 +20,7 @@
       	action="<%=request.getContextPath()%>/api/BuscarController" 
       	method="get">
         <input name="clave" class="form-control me-2" type="search" placeholder="B&uacute;squeda" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Buscar</button>
+        <button class="btn btn-outline-success" style="color: #12C176" "type="submit">Buscar</button>
       </form>
     </div>
   </div>
