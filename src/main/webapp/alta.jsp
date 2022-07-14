@@ -26,7 +26,7 @@
 						  <input name="codigo" type="text" class="form-control" id="exampleFormControlTextarea1" maxlength="7" placeholder="C&oacute;digo" style="width: 600px; heigth: 1px">
 						</div>
 						<br>
-						<button class="btn btn-outline-secondary">Dar de alta</button>
+						<button class="btn btn-outline-success" style="color: #12C176">Dar de alta</button>
 					</form>
 				</section>
 			</div>
