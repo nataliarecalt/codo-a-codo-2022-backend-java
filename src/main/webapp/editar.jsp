@@ -8,39 +8,29 @@
 		<main>
 			<!-- ACA VA EL NAVBAR  -->
 			<%@include file="navbar.jsp" %>
-			<div class="container">
+			<div class="container" align="center">
 				<section>
 					<% 
 					  	Producto producto = (Producto)request.getAttribute("producto");
 				  	%>
-					<h1 style="color: white"> <br> Editar producto - ID:<%=producto.getIdProducto()%></h1>
+					<h2 style="color: white" align="center"> <br> Editar producto ID: <%=producto.getIdProducto()%></h2>
 					<!--  JSP -->
 					<form method="POST"
 						action="<%=request.getContextPath()%>/api/EditarController">
+						<br>
 						<div class="mb-3" style="color: white">
-						  <label for="exampleFormControlInput1" class="form-label">Nombre</label>
-						  <input name="nombre"
-						  	value="<%=producto.getNombre()%>"  
-						  	type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre" maxlength="50">
+							<input name="nombre" value="<%=producto.getNombre()%>" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre" maxlength="50" style="width: 600px; heigth: 1px">
 						</div>
 						<div class="mb-3" style="color: white">
-						  <label for="exampleFormControlTextarea1" class="form-label">Precio</label>
-						  <input name="precio"
-						  	value="<%=producto.getPrecio()%>" 
-						  	type="number" class="form-control" id="exampleFormControlTextarea1">
+							<input name="nombre" value="<%=producto.getPrecio()%>" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre" maxlength="50" style="width: 600px; heigth: 1px">
 						</div>
 						<div class="mb-3" style="color: white">
-						  <label for="exampleFormControlTextarea1" class="form-label">Im&aacute;gen</label>
-						  <input name="imagen" type="file" class="form-control" id="exampleFormControlTextarea1">
+						  	<input name="imagen" type="file" class="form-control" id="exampleFormControlTextarea1" maxlength="50" style="width: 600px; heigth: 1px">
 						</div>
 						<div class="mb-3" style="color: white">
-						  <label for="exampleFormControlTextarea1" class="form-label">C&oacute;digo</label>
-						  <input name="codigo"
-						  	readonly="readonly"
-						  	value="<%=producto.getCodigo()%>" 
-						  	type="text" class="form-control" id="exampleFormControlTextarea1" maxlength="7">
+							<input name="nombre" readonly="readonly" value="<%=producto.getCodigo()%>" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre" maxlength="50" style="width: 600px; heigth: 1px">
 						</div>
-						<button class="btn btn-outline-light">
+						<button class="btn btn-outline-success" style="color: #12C176">
 							Finalizar Edici&oacute;n
 						</button>
 					</form>
